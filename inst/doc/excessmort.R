@@ -10,7 +10,7 @@ library(ggplot2)
 library(lubridate)
 library(excessmort)
 
-## ---- plot-options, include=FALSE---------------------------------------------
+## ----plot-options, include=FALSE----------------------------------------------
 # -- Set up for figures
 theme_set(theme_bw(base_size   = 12, 
                    base_family = "Helvetica")) 
@@ -66,7 +66,7 @@ counts <- compute_counts(cook_records, by = c("agegroup", "race", "sex"),
                          breaks = c(0, 20, 40, 60, 80, Inf))
 kable(counts[1:6,])
 
-## ---- message=FALSE, warning=FALSE--------------------------------------------
+## ----message=FALSE, warning=FALSE---------------------------------------------
 # -- Dates to exclude when fitting the mean model
 exclude_dates <- c(seq(make_date(2017, 12, 16), make_date(2018, 1, 16), by = "day"),
                    seq(make_date(2020, 1, 1), max(cdc_state_counts$date), by = "day"))
@@ -79,7 +79,7 @@ counts <- cdc_state_counts %>%
 
 kable(counts[1:6,])
 
-## ---- fig.align="center", fig.width=6, fig.height=4---------------------------
+## ----fig.align="center", fig.width=6, fig.height=4----------------------------
 # -- Visualizing weekly counts and expected counts in blue
 expected_plot(counts, title = "Weekly Mortality Counts in MA")
 
@@ -87,13 +87,13 @@ expected_plot(counts, title = "Weekly Mortality Counts in MA")
 # -- Dispersion parameter from the mean model
 attr(counts, "dispersion")
 
-## ---- fig.align="center", fig.width=6, fig.height=4---------------------------
+## ----fig.align="center", fig.width=6, fig.height=4----------------------------
 # -- Fitting mean model to data from Massachusetts and retaining mean model componentss
 res  <- cdc_state_counts %>% filter(state == "Massachusetts") %>%
   compute_expected(exclude = exclude_dates,
                    keep.components = TRUE)
 
-## ---- fig.align="center", fig.width=6, fig.height=4---------------------------
+## ----fig.align="center", fig.width=6, fig.height=4----------------------------
 # -- Creating diagnostic plots
 mean_diag <- expected_diagnostic(res)
 
@@ -113,7 +113,7 @@ fit <- cdc_state_counts %>%
                knots.per.year = 12,
                verbose = FALSE)
 
-## ---- fig.align="center", fig.width=6, fig.height=4---------------------------
+## ----fig.align="center", fig.width=6, fig.height=4----------------------------
 # -- Visualizing deviations from expected mortality in Massachusetts
 excess_plot(fit, title = "Deviations from Expected Mortality in MA")
 
@@ -121,7 +121,7 @@ excess_plot(fit, title = "Deviations from Expected Mortality in MA")
 # -- Intervals of inordinate mortality found by the excess model
 fit$detected_intervals
 
-## ---- fig.align="center", fig.width=6, fig.height=4---------------------------
+## ----fig.align="center", fig.width=6, fig.height=4----------------------------
 # -- Computing excess deaths in Massachusetts from March 1, 2020 to May 9, 2020
 cumulative_deaths  <- excess_cumulative(fit, 
                                         start = make_date(2020, 03, 01),
@@ -218,16 +218,16 @@ f <- lapply(seq_along(interval_start), function(i){
                model = "correlated")
 })
 
-## ---- fig.align="center", fig.width=6, fig.height=4---------------------------
+## ----fig.align="center", fig.width=6, fig.height=4----------------------------
 # -- Visualizing deviations in mortality for Hurricane Maria
 excess_plot(f[[2]],  title = names(interval_start)[2])
 
-## ---- eval= FALSE-------------------------------------------------------------
+## ----eval= FALSE--------------------------------------------------------------
 #  excess_plot(f[[1]], title = names(interval_start)[1])
 #  excess_plot(f[[3]],  title = names(interval_start)[3])
 #  excess_plot(f[[4]],  title = names(interval_start)[4])
 
-## ---- fig.align="center", fig.width=6, fig.height=4---------------------------
+## ----fig.align="center", fig.width=6, fig.height=4----------------------------
 
 # -- Calculating excess deaths for 365 days after the start of each event
 ndays <- 365 
@@ -263,6 +263,6 @@ cumu %>%
        color = "",
        fill  = "")
 
-## ---- echo=FALSE--------------------------------------------------------------
+## ----echo=FALSE---------------------------------------------------------------
 options(old_options)
 

@@ -4,16 +4,27 @@
 \alias{approx_demographics}
 \title{Interpolate demographic data}
 \usage{
-approx_demographics(demo, first_day, last_day, by = "year")
+approx_demographics(
+  demo,
+  first_day,
+  last_day,
+  by,
+  extrapolation.type = c("linear", "constant", "none"),
+  ...
+)
 }
 \arguments{
-\item{demo}{A data frame with the yearly population estimates}
+\item{demo}{A data frame with the yearly population estimates. Must have a numeric column named year and a numeric column named population.}
 
-\item{first_day}{First day to interpolate}
+\item{first_day}{First day to interpolate. If missing the first day of the first year in demo is used.}
 
-\item{last_day}{Last day to interpolate.}
+\item{last_day}{Last day to interpolate. If missing the last day of the last year in demo is used.}
 
-\item{by}{Vector of column names to group by, for example different demographic strata}
+\item{by}{Vector of column names to group by, for example different demographic strata. If missing it will extrapolate within each strata. To collapse all strata, define as by = NULL.}
+
+\item{extrapolation.type}{Type of extrapolation. Either linear, constant, or none. If none is selected the NAs are returned.}
+
+\item{...}{additional parameters sent to the function `approx`.}
 }
 \value{
 A data frame with dates and population estimates.

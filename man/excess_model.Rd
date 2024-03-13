@@ -14,6 +14,7 @@ excess_model(
   discontinuity = TRUE,
   model = c("quasipoisson", "poisson", "correlated"),
   exclude = NULL,
+  include.trend = TRUE,
   trend.knots.per.year = 1/7,
   harmonics = 2,
   frequency = NULL,
@@ -26,6 +27,8 @@ excess_model(
   epsilon = 1e-08,
   alpha = 0.05,
   min.rate = 1e-04,
+  keep.counts = FALSE,
+  keep.components = TRUE,
   verbose = TRUE
 )
 }
@@ -47,6 +50,8 @@ excess_model(
 \item{model}{Which version of the model to fit}
 
 \item{exclude}{Dates to exclude when computing expected counts}
+
+\item{include.trend}{Logical that determines if a slow trend is included in the model.}
 
 \item{trend.knots.per.year}{Number of knots per year used by `compute_expected` to estimate the trend for the expected counts}
 
@@ -71,6 +76,10 @@ excess_model(
 \item{alpha}{Percentile used to define what is outside the normal range}
 
 \item{min.rate}{The estimated expected rate is not permited to go below this value}
+
+\item{keep.counts}{A logical that if `TRUE` forces the function to include the data used to fit the expected count model.}
+
+\item{keep.components}{A logical that if `TRUE` forces the function to return the estimated trend, seasonal model, and weekday effect, if included in the model. Ignored if expected counts already provided or `keep.counts` is `FALSE`.}
 
 \item{verbose}{Logical that determines if messages are displayed}
 }
@@ -98,7 +107,7 @@ if `start` and `end` are provided the a list with the following components are i
 This function estimates the increase in the rate for a count time series relative to 
 the rate for a typical year. Two options are available: 1 - model the rate increase as a 
 smooth function and estimate this function or 2 - estimate the total excess in intervals. 
-For 1m an `event` date can be provided and a discontinuity included in the model.
+For 1 an `event` date can be provided and a discontinuity included in the model.
 You can do either 1 or 2 or both.
 }
 \details{
