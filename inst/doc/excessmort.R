@@ -223,9 +223,9 @@ f <- lapply(seq_along(interval_start), function(i){
 excess_plot(f[[2]],  title = names(interval_start)[2])
 
 ## ----eval= FALSE--------------------------------------------------------------
-#  excess_plot(f[[1]], title = names(interval_start)[1])
-#  excess_plot(f[[3]],  title = names(interval_start)[3])
-#  excess_plot(f[[4]],  title = names(interval_start)[4])
+# excess_plot(f[[1]], title = names(interval_start)[1])
+# excess_plot(f[[3]],  title = names(interval_start)[3])
+# excess_plot(f[[4]],  title = names(interval_start)[4])
 
 ## ----fig.align="center", fig.width=6, fig.height=4----------------------------
 

@@ -1,10 +1,10 @@
-ba5ff82cd70488ad4f80df960015045f *DESCRIPTION
+e96b334f4e9eb998bd72fe429785aa70 *DESCRIPTION
 d820cc23a00b66bc712291c00fb650a8 *NAMESPACE
 e7813bbd9d8f2ebea71a9381f960ab3f *R/approx_demographics.R
 84a29ce52bd353f53e756a9a26f285d6 *R/cdc_state_counts.R
 b80e460f9d9ab946ea4881fbea057999 *R/collapse_age_dist.R
 291c1bd3d82c4f550eb3883ab41873ad *R/compute_counts.R
-17263293f28e3ed544b8c117791d04bb *R/compute_expected.R
+336501f860402af991e04ad21678c3ca *R/compute_expected.R
 cd6bfd95f18d714b0bcd76d00149fc03 *R/cook_records.R
 ed164366a96e341dcd4a8463db67e9e2 *R/excess_cumulative.R
 478fa6b6a51020309f72e56759d12b24 *R/excess_model.R
@@ -30,9 +30,9 @@ ebf3fba9c5d4ece2d9bb59501ad3eb25 *data/cook_records.rda
 bb549fda2980dc6821a514b8e808d450 *data/puerto_rico_counts.rda
 a55e2fe978fdea64b3eaef7922fcb45d *data/puerto_rico_icd.rda
 1d3b3fd93e2dd1b412be20c03ac1bde1 *data/world_counts.rda
-01c20d3078ad8c146850ed68c4e26f11 *inst/doc/excessmort.R
+c6143c46b8e4ea1248d57754b441bad9 *inst/doc/excessmort.R
 4ad8cc48f5ec9ca1c2364d01f6625955 *inst/doc/excessmort.Rmd
-b0188b2a5d3a594ffa8f127cfa7a0b12 *inst/doc/excessmort.html
+5c995d4efae13ab84006779d00b4dd69 *inst/doc/excessmort.html
 f963239058be30abd1d7fc8e44f3d6e3 *man/approx_demographics.Rd
 f23172d36b7da73e8c03ab6cbd3df730 *man/cdc_state_counts.Rd
 18df2a8abd8aa4f3af8514460bbb7886 *man/collapse_age_dist.Rd

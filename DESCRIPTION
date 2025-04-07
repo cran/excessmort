@@ -1,7 +1,7 @@
 Package: excessmort
 Type: Package
 Title: Excess Mortality
-Version: 0.8.0
+Version: 0.8.1
 Authors@R: c(person(c("Rafael", "A."), "Irizarry", email = "rafael_irizarry@dfci.harvard.edu",
                   role = c("aut", "cre")),
              person("Rolando", "Acosta", role = "aut"),
@@ -17,13 +17,13 @@ License: Artistic-2.0
 Encoding: UTF-8
 LazyData: true
 LazyDataCompression: xz
-RoxygenNote: 7.3.1
+RoxygenNote: 7.3.2
 NeedsCompilation: no
-Packaged: 2024-11-12 18:51:04 UTC; rafa
+Packaged: 2025-04-07 13:44:41 UTC; rafa
 Author: Rafael A. Irizarry [aut, cre],
   Rolando Acosta [aut],
   Mónica Robles-Fontán [aut],
   Ferenci Tamás [ctb]
 Maintainer: Rafael A. Irizarry <rafael_irizarry@dfci.harvard.edu>
 Repository: CRAN
-Date/Publication: 2024-11-14 19:20:02 UTC
+Date/Publication: 2025-04-07 14:10:06 UTC
